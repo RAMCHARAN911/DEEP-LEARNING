@@ -1,0 +1,14 @@
+import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
+data = {
+    'Age':[18,20,22,25,28,30],
+    'Buy':['No','No','Yes','Yes','Yes','Yes']
+}
+df = pd.DataFrame(data)
+X = df[['Age']]
+y = df['Buy']
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X,y)
+new = pd.DataFrame({'Age':[21]})
+prediction = model.predict(new)
+print("Prediction:",prediction[0])
