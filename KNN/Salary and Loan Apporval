@@ -1,0 +1,14 @@
+import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
+data = {
+    'Salary':[20000,25000,30000,40000,50000,60000],
+    'Loan':['No','No','Yes','Yes','Yes','Yes']
+}
+df = pd.DataFrame(data)
+X = df[['Salary']]
+y = df['Loan']
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X,y)
+new = pd.DataFrame({'Salary':[35000]})
+prediction = model.predict(new)
+print("Loan Status:",prediction[0])
