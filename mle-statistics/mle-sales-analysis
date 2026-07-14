@@ -1,0 +1,10 @@
+import numpy as np
+sales = np.array([120, 150, 180, 170, 160, 190, 200, 175, 185, 195])
+mean_mle = np.mean(sales)
+variance_mle = np.mean((sales - mean_mle) ** 2)
+print("MLE Mean =", mean_mle)
+print("MLE Variance =", variance_mle)
+successful_days = 9
+total_days = 10
+p_mle = successful_days / total_days
+print("MLE Probability =", p_mle)
